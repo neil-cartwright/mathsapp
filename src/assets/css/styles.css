@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel-block .control {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+input[type="number"] {
+    max-width: 5em;
+    text-align: center;
+}
+
+.notification.has-tables {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.notification.has-tables .table {
+    margin: .25em;
+    font-family: monospace;
+    letter-spacing: 3px;
+
+}
+
+.notification.has-tables .table td {
+    height: 2em;
+    font-weight: bold;
+}
+
+.notification.has-tables .table tr:last-child {
+    border-top: 3px double;
+}
+
+.notification.has-tables .table td:first-child {
+    text-align: right;
+    min-width: 8em;
+}

@@ -1,5 +1,7 @@
 # maths-project
 
+# https://dev.to/mornir/add-tailwind-to-your-vue-app-5hea
+
 ## Project setup
 ```
 npm install
