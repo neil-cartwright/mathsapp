@@ -10,16 +10,40 @@ body {
 
 .panel-block .control {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     flex-wrap: wrap;
 }
 
-input[type="number"] {
-    max-width: 5em;
+.panel-controls {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dotted #d8d8d8;
+    padding: 1em;
+    width: 100%;
+}
+
+.panel-controls p {
+    flex: 1 1 30%;
+    margin-right: 2em;
+    text-align: left;
+}
+
+.panel-controls .input[type="number"] {
+    max-width: 80px;
+}
+
+.panel-controls select {}
+
+.panel-controls .panel-controls .input[type="number"],
+.panel-controls select {
+    min-width: 0;
+    flex: 1 2 10%;
     text-align: center;
 }
+
 
 .notification.has-tables {
     flex-wrap: wrap;
@@ -45,4 +69,17 @@ input[type="number"] {
 .notification.has-tables .table td:first-child {
     text-align: right;
     min-width: 8em;
+}
+
+.field.is-grouped.buttons {
+    padding: 1em;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+@media print {
+    .noPrint {
+        display: none;
+    }
 }

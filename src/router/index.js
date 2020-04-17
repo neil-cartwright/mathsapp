@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import PrintSums from '../views/PrintSums.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'PrintSums',
+    component: PrintSums
   },
   {
-    path: '/printSums',
+    path: '/print-sums',
     name: 'PrintSums',
     component: PrintSums
   }
