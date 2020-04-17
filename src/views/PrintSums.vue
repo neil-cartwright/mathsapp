@@ -22,7 +22,7 @@
                   class="input has-text-center"
                   type="number"
                   placeholder="2"
-                  min="10"
+                  min="2"
                   max="50"
                   step="2"
                   v-model="number"
@@ -43,7 +43,7 @@
 
               <div class="panel-controls">
                 <p class="label">
-                  with Max Values
+                  Top Number
                 </p>
 
                 <div class="select">
@@ -55,6 +55,23 @@
                     <option value="100000">In Ten Thousands</option>
                     <option value="1000000">In Hundred Thousands</option>
                     <option value="10000000">In Millions</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="panel-controls">
+                <p class="label">
+                  Bottom Number
+                </p>
+
+                <div class="select">
+                  <select v-model="minQuantifiers">
+                    <option value="10">In single digits</option>
+                    <option value="100">In Tens</option>
+                    <option value="1000">In Hundreds</option>
+                    <option value="10000">In Thousands</option>
+                    <option value="100000">In Ten Thousands</option>
+                    <option value="1000000">In Hundred Thousands</option>
                   </select>
                 </div>
               </div>
@@ -117,7 +134,8 @@
 export default {
   data: function() {
     return {
-      number: 10,
+      number: 2,
+      minQuantifiers: 10,
       quantifiers: 10,
       operator: "&#43;",
       randomNums: [],
@@ -128,10 +146,19 @@ export default {
   },
 
   methods: {
+    getMinRandomNumbers: function() {
+      for (var i = 0; i < this.number * 2; i++) {
+        if (i % 2 == 0) {
+          let item = Math.floor(Math.random() * this.minQuantifiers);
+          this.randomNums.splice(i, 1, item);
+        }
+      }
+    },
     getRandomNumbers: function() {
       for (var i = 0; i < this.number * 2; i++) {
         this.randomNums.push(Math.floor(Math.random() * this.quantifiers));
       }
+      this.getMinRandomNumbers();
       return this.randomNums;
     },
     makePairs: function() {
@@ -156,6 +183,7 @@ export default {
       this.showPrintButton = false;
     },
     reset: function() {
+      this.randomNums = [];
       this.arrayPairs = [];
       this.showPrintButton = false;
       this.activateNotification = false;
