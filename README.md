@@ -1,26 +1,7 @@
-# maths-project
+# Maths App
 
-# https://dev.to/mornir/add-tailwind-to-your-vue-app-5hea
+Prints out sums for kids.
 
-## Project setup
-```
-npm install
-```
+## Built with vue-cli and Bulma
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm run serve - npm run build
